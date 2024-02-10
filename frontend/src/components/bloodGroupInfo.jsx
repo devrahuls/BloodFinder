@@ -48,39 +48,59 @@ const BloodGroupInfo = () => {
   };
 
   return (
-    <div className="container">
-      <h1>Get The Info About Your Blood</h1>
-      <div className="tabs">
+    <div className="container rounded-lg p-4 mb-8 md:p-16">
+      {/* Title */}
+      <h1 className="text-4xl font-bold mt-5 mb-5 text-center md:text-6xl justify-center flex items-center">
+        Know More About Your Blood
+      </h1>
+
+      {/* Tabs */}
+      <div className="tabs flex flex-wrap justify-around border-b border-gray-200 md:justify-between">
         <button
-          className={`tab ${activeTab === 'O' ? 'active' : ''}`}
+          className={`tab text-center py-2 rounded hover:bg-gray-200 text-gray-700 md:px-40 ${
+            activeTab === 'O' ? 'active bg-gray-200 text-red-600' : ''
+          }`}
           onClick={() => handleTabChange('O')}
         >
           O
         </button>
         <button
-          className={`tab ${activeTab === 'A' ? 'active' : ''}`}
+          className={`tab text-center py-2 rounded hover:bg-gray-200 text-gray-700 md:px-40 ${
+            activeTab === 'A' ? 'active bg-gray-200 text-red-600' : ''
+          }`}
           onClick={() => handleTabChange('A')}
         >
           A
         </button>
         <button
-          className={`tab ${activeTab === 'B' ? 'active' : ''}`}
+          className={`tab text-center py-2 rounded hover:bg-gray-200 text-gray-700 md:px-40 ${
+            activeTab === 'B' ? 'active bg-gray-200 text-red-600' : ''
+          }`}
           onClick={() => handleTabChange('B')}
         >
           B
         </button>
         <button
-          className={`tab ${activeTab === 'AB' ? 'active' : ''}`}
+          className={`tab text-center py-2 rounded hover:bg-gray-200 text-gray-700 md:px-40 ${
+            activeTab === 'AB' ? 'active bg-gray-200 text-red-600' : ''
+          }`}
           onClick={() => handleTabChange('AB')}
         >
           AB
         </button>
       </div>
-      <div className="description">
-        <h2>{bloodGroupDescriptions[activeTab].title}</h2>
-        {bloodGroupDescriptions[activeTab].description}
+
+      {/* Description */}
+      <div className="description w-full pt-4">
+        <h2 className="text-2xl font-bold text-center md:text-3xl mb-4">
+          {bloodGroupDescriptions[activeTab].title}
+        </h2>
+        <p className="text-lg w-full text-center md:text-lg md:ml-6">
+          {bloodGroupDescriptions[activeTab].description}
+        </p>
       </div>
     </div>
+
   );
 };
 
